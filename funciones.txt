@@ -1,0 +1,12 @@
+Function CONTIENENUMERO(celda As String) As Boolean
+    Dim i As Integer
+    For i = 1 To Len(celda)
+        If IsNumeric(Mid(celda, i, 1)) Then
+            CONTIENENUMERO = 1
+            Exit Function
+        End If
+    Next i
+    CONTIENENUMERO = 0
+End Function
+
+=SI(CONTIENENUMERO(B3),B3,(SI(O(B3="S",B3="M",B3="L",B3="XL"),B3,D3)))
